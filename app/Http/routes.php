@@ -10,7 +10,17 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.master');
 });
+
+	Route::get('cards','CardController@index');
+	Route::get('cards/{card}','CardController@show');
+	Route::post('cards/{card}/notes','NotesController@store');
+	Route::get('notes/{note}/edit','NotesController@edit');
+	Route::put('notes/{note}','NotesController@update');
+
+  
+
+
+
